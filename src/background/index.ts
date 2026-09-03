@@ -21,6 +21,8 @@ chrome.runtime.onMessage.addListener((message: ExtensionMessage, _sender, sendRe
           await storage.setState(message.payload); return sendResponse({ ok: true, data: undefined });
         case MessageType.SaveBookmarks:
           return sendResponse({ ok: true, data: await storage.appendBookmarks(message.payload) });
+        case MessageType.ExportBookmarks:
+          return sendResponse({ ok: true, data: { exportedAt: new Date().toISOString(), bookmarks: await storage.getBookmarks() } });
         case MessageType.UpdateSettings:
           return sendResponse({ ok: true, data: await storage.updateSettings(message.payload) });
         case MessageType.Sync:

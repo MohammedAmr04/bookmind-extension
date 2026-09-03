@@ -94,6 +94,10 @@ After source changes, run `npm run build` again and use the reload button on the
 
 The popup displays the collection status, number of newly stored bookmarks, elapsed time, and last successful sync.
 
+## Export JSON
+
+Until a backend is connected, select **Download JSON** in the popup to save the currently stored bookmarks to a local file. The file is named `bookmind-bookmarks-YYYY-MM-DD.json` and contains the export timestamp plus the normalized bookmark array.
+
 ## Backend synchronization
 
 In the popup, set the backend URL, for example:
